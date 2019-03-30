@@ -257,8 +257,6 @@ cnnModel.add(keras.layers.Dense(128, activation='relu',
 cnnModel.add(keras.layers.Dense(128, activation='relu',
                activity_regularizer=keras.regularizers.l1(0.003)))
 
-cnnModel.add(keras.layers.Dense(128, activation='relu',
-               activity_regularizer=keras.regularizers.l1(0.003)))
 # cnnModel2.add(keras.layers.Dropout(0.3))
 
 cnnModel.add(keras.layers.Dense(class_num, activation='softmax'))
@@ -356,8 +354,6 @@ for i in range(num_images):
   plt.subplot(num_rows, 2*num_cols, 2*i+2)
   plot_value_array(j, predictions, test_class)
 plt.show()
-
-"""Finally, save the model as output and download the file."""
 
 model.save("CNN_SVHN.h5")
 files.download("CNN_SVHN.h5")
